@@ -43,11 +43,71 @@
 
     <!-- Navigation -->
     <nav class="main-nav">
-        <a href="#about-us" class="nav-link">Sobre Nós</a>
-        <a href="#aedrim" class="nav-link">Aedrim</a>
-        <a href="#contact" class="nav-link">Entre em Contato</a>
-        <a href="#" class="nav-link">Atualizações do Servidor</a>
+        <a href="#about-us" class="nav-link" id="link-about-us" data-original-text="Sobre Nós">Sobre Nós</a>
+        <a href="#aedrim" class="nav-link" id="link-aedrim" data-original-text="Aedrim">Aedrim</a>
+        <a href="#contact" class="nav-link" id="link-contact" data-original-text="Se Aventure">Se Aventure</a>
+        <a href="#" class="nav-link" id="link-update" data-original-text="Atualizações">Atualizações</a>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const links = document.querySelectorAll('.main-nav .nav-link');
+        
+                function substituirTextoPorSimbolos() {
+                    links.forEach(link => {
+                        link.dataset.originalText = link.textContent;
+                        switch (link.id) {
+                            case 'link-about-us':
+                                link.textContent = '1';
+                                break;
+                            case 'link-aedrim':
+                                link.textContent = '2';
+                                break;
+                            case 'link-contact':
+                                link.textContent = '3';
+                                break;
+                            case 'link-update':
+                                link.textContent = '4';
+                                break;
+                        }
+                    });
+                }
+        
+                function restaurarTextosOriginais() {
+                    links.forEach(link => {
+                        switch (link.id) {
+                            case 'link-about-us':
+                                link.textContent = 'Sobre Nós';
+                                break;
+                            case 'link-aedrim':
+                                link.textContent = 'Aedrim';
+                                break;
+                            case 'link-contact':
+                                link.textContent = 'Se Aventure';
+                                break;
+                            case 'link-update':
+                                link.textContent = 'Atualizações';
+                                break;
+                        }
+                    });
+                }
+        
+                function verificarTamanhoDaTela() {
+                    if (window.innerWidth < 600) {
+                        substituirTextoPorSimbolos();
+                    } else {
+                        restaurarTextosOriginais();
+                    }
+                }
+        
+                // Chamar a função no evento 'resize'
+                window.addEventListener('resize', verificarTamanhoDaTela);
+        
+                // Chamar a função assim que a página carregar
+                verificarTamanhoDaTela();
+            });
+        </script>
     </nav>
+    
     <main>
         <h2 class="title">Sobre Nós</h2>
         <div class="about-us" id="#about-us">

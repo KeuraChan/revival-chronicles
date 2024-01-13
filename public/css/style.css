@@ -456,3 +456,23 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+@media screen and (max-width: 900px) {
+    .title{
+        text-align: center;
+        margin-left: 0!important; 
+        padding-left: 0!important;
+    }
+
+    .about-us .information {
+        width: 90%;
+        min-width: 0;
+    }
+
+    .about-us img {
+        width: 80%;
+        max-width: none; /* Remove a largura máxima */
+        min-width: 0; /* Remove a largura mínima */
+        border-radius: 6px;
+    }
+}
