@@ -28,7 +28,7 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,7 +78,6 @@ body {
 
 body {
     background-color: #333;
-    margin-bottom: 80px;
 }
 
 main {
@@ -125,18 +124,21 @@ main {
     justify-content: space-around;
     padding: 20px;
     text-align: justify;
+    flex-wrap: wrap;
     color: #fff;
     /* Cor do texto na seção "About Us" */
 }
 
 .about-us .information {
     width: 40%;
+    min-width: 400px;
 }
 
 .about-us img {
     border-radius: 6px;
     width: 40%;
     max-width: 600px;
+    min-width: 550px;
 }
 
 
@@ -155,7 +157,7 @@ main {
 #aedrim .slick-carousel .item-carousel {
     margin: 0 auto;
     width: 90vw;
-    height: 60vh;
+    height: 80vh;
 }
 
 
@@ -266,13 +268,191 @@ main {
     border-radius: 5px;
 }
 
+/* entre em contato */
+#contact {
+    background-color: #2A2C47;
+    color: #fff;
+    padding: 50px 0;
+    width: 100vw;
+}
+
+#contact .title{
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 8px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.contact-info {
+    justify-content: space-around;
+    display: flex;
+    margin-top: 30px;
+}
+
+.contact-emails {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+}
+
+.email-box {
+    width: fit-content;
+    padding: 10px;
+    min-width: 240px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    margin-bottom: 20px;
+}
+
+.email-box h3 {
+    font-size: 24px;
+}
+
+.discord {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
+.center-line {
+    margin: 20px 20px;
+    text-align: center;
+}
+
+.center-line img {
+    width: 400px;
+    max-width: 80vw;
+    max-height: 600px;
+    height: 500px;
+    border-radius: 50px;
+}
+
+.texto-invite p {
+    font-size: 16px;
+    margin: 5px 0;
+    
+}
+
+.widget-2vZvsN{
+    height: 600px!important;
+}
+
+.invite {
+    background-color: #232323;
+    padding: 20px; /* Aumenta o padding para dar mais espaço */
+    border-radius: 10px;
+    width: 300px; /* Reduz o width para evitar que os elementos fiquem grudados */
+    text-align: center;
+    margin-bottom: 20px; /* Adiciona espaço no final do invite */
+    max-height: 500px;
+    overflow-y: auto;
+}
+@media screen and (max-width: 600px) {
+    .discord {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.title-invite {
+    font-size: 19px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.corpo-invite {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Ajusta a direção do layout para column */
+    justify-content: space-between; /* Espaço uniforme entre os elementos internos */
+    margin-top: 20px; /* Adiciona espaço no topo */
+    
+}
+
+
+.imagem-icon {
+    background-color: #000;
+    border-radius: 10px;
+    padding: 10px; /* Adiciona um padding para dar espaço à imagem */
+    margin-bottom: 10px; /* Adiciona espaço entre a imagem e o texto */
+}
+
+.imagem-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.texto-invite {
+    text-align: center; /* Centraliza o texto */
+    
+}
+
+
+
+.texto-invite h2{
+    margin-top: 20px;
+}
+
+.texto-invite p{
+    margin-bottom: 20px;
+}
+
+.server-name {
+    font-size: 18px;
+    margin: 0;
+}
+
+.canal-server {
+    color: #ccc;
+    margin: 5px 0;
+}
+.desc-server{
+    text-align: justify!important;
+    font-size: 0.9em!important;
+}
+
+.link-invite {
+    display: block;
+    background-color: #42173C;
+    color: #eee;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.link-invite:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #431847;
+    transform: scale(1.2);
+}
+
 footer {
     background: #6f0000;
     /* Cor de fundo do rodapé */
     color: #fff;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
