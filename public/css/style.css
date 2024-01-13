@@ -1,0 +1,278 @@
+/* declarando fontes custom */
+@font-face {
+    font-family: 'BlackFlag';
+    src: url('/public/fonts/blackflag/BlackFlag.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nitemare';
+    src: url('/public/fonts/NITEMARE.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FairyDust';
+    src: url('/public/fonts/FairyDustB.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'handwriting_black_draft';
+    src: url('/public/fonts/handwriting-black-draft_DEMO.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #333;
+}
+
+
+.main-header {
+    background: rgb(64, 23, 30);
+    background: -moz-linear-gradient(90deg, rgba(64, 23, 30, 1) 0%, #910000 49%, rgba(64, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(64, 23, 30, 1) 0%, rgba(145, 0, 0, 1) 49%, rgba(64, 0, 0, 1) 100%);
+    background: linear-gradient(90deg, rgba(64, 23, 30, 1) 0%, rgba(145, 0, 0, 1) 49%, rgba(64, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#40171e", endColorstr="#400000", GradientType=1);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-family: FairyDust;
+    margin: 0;
+}
+
+.main-header p {
+    font-family: handwriting_black_draft;
+    margin: 5px 0;
+}
+
+.main-nav {
+    background: #cc0000c6;
+
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.main-nav a:hover {
+    color: #00bcd4;
+}
+
+body {
+    background-color: #333;
+    margin-bottom: 80px;
+}
+
+main {
+    padding: 10px;
+}
+
+.title {
+    padding-left: 350px;
+    margin-top: 20px;
+    margin-left: 350px;
+    font-family: Nitemare;
+    color: #fff;
+}
+
+.title-principal .title {
+    padding-left: 0px;
+    margin-left: 25%;
+    margin-right: 150px;
+    text-align: left;
+    font-size: 5em;
+}
+
+.title-principal {
+    margin: 0 !important;
+    padding: 3px;
+    background-color: #8B0000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* .title-principal .separador {
+    margin-left: 10px;
+    border: 7px solid rgb(71, 45, 24);
+    flex-grow: 1;
+} */
+
+.title {
+    margin: 0;
+}
+
+.about-us {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: justify;
+    color: #fff;
+    /* Cor do texto na seção "About Us" */
+}
+
+.about-us .information {
+    width: 40%;
+}
+
+.about-us img {
+    border-radius: 6px;
+    width: 40%;
+    max-width: 600px;
+}
+
+
+
+#aedrim {
+    padding-top: 20px;
+    height: 100vh;
+    position: relative;
+}
+
+#aedrim .slick-carousel {
+    margin: 20px;
+    /* Adicione margem ao redor do carrossel */
+}
+
+#aedrim .slick-carousel .item-carousel {
+    margin: 0 auto;
+    width: 90vw;
+    height: 60vh;
+}
+
+
+#aedrim .slick-prev,
+#aedrim .slick-next {
+    font-size: 32px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    /* Ajuste o preenchimento conforme necessário */
+    cursor: pointer;
+    background: none;
+    /* Remova o fundo */
+    border: none;
+    /* Remova a borda se houver */
+}
+
+#aedrim .slick-prev {
+    left: 10px;
+}
+
+#aedrim .slick-next {
+    right: 10px;
+}
+
+#aedrim .slick-dots {
+    bottom: 10px;
+    /* Ajuste a posição dos pontos indicadores */
+}
+
+#aedrim .slick-dots li button {
+    font-size: 12px;
+    /* Ajuste o tamanho dos pontos indicadores */
+    color: #fff;
+    /* Cor dos pontos indicadores inativos */
+}
+
+#aedrim .slick-dots li.slick-active button {
+    color: #00bcd4;
+    /* Cor do ponto indicador ativo */
+}
+
+.carousel-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000072;
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel-overlay h3 {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+.carousel-overlay p {
+    width: 100%;
+    text-align: justify;
+    margin: 10px 0;
+    margin-top: 20px;
+}
+
+.btn-carousel {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-carousel .btn-leia-mais {
+    text-align: center;
+    width: 80%;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #431847;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.conteudo-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.btn-carousel .btn-leia-mais {
+    text-align: center;
+    width: 80%;
+    display: inline-block;
+    margin: 30px 80;
+    margin-top: 40px;
+    padding: 10px 20px;
+    background-color: #431847;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background: #6f0000;
+    /* Cor de fundo do rodapé */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

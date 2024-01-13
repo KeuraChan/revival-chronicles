@@ -1,0 +1,15 @@
+.item-carousel1 {
+    background-image: url('../img/exemplo1.png');
+    background-repeat:no-repeat ;
+    background-size: cover;
+}
+.item-carousel2 {
+    background-image: url('../img/exemplo2.png');
+    background-repeat:no-repeat ;
+    background-size: cover;
+}
+.item-carousel3 {
+    background-image: url('../img/exemplo3.png');
+    background-repeat:no-repeat ;
+    background-size: cover;
+}
