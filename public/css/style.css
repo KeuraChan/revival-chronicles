@@ -59,11 +59,24 @@ body {
 
 .main-nav {
     background: #cc0000c6;
-
+    width: 100%;
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    transition: 0.2s;
+    z-index: 1000; 
 }
+
+/* Adicione a classe 'fixed' quando a barra de navegação atingir o topo */
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #cc0000;
+    box-shadow: 0px 51px 39px -5px rgba(0,0,0,0.5);c
+}
+
+
 
 .main-nav a {
     color: #fff;

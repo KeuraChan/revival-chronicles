@@ -47,11 +47,11 @@
         <a href="#aedrim" class="nav-link" id="link-aedrim" data-original-text="Aedrim">Aedrim</a>
         <a href="#contact" class="nav-link" id="link-contact" data-original-text="Se Aventure">Se Aventure</a>
         <a href="#" class="nav-link" id="link-update" data-original-text="Atualizações">Atualizações</a>
-    
+
         <script>
             document.addEventListener('DOMContentLoaded', (event) => {
                 const links = document.querySelectorAll('.main-nav .nav-link');
-        
+
                 function substituirTextoPorSimbolos() {
                     links.forEach(link => {
                         link.dataset.originalText = link.textContent;
@@ -71,7 +71,7 @@
                         }
                     });
                 }
-        
+
                 function restaurarTextosOriginais() {
                     links.forEach(link => {
                         switch (link.id) {
@@ -90,7 +90,7 @@
                         }
                     });
                 }
-        
+
                 function verificarTamanhoDaTela() {
                     if (window.innerWidth < 600) {
                         substituirTextoPorSimbolos();
@@ -98,19 +98,19 @@
                         restaurarTextosOriginais();
                     }
                 }
-        
+
                 // Chamar a função no evento 'resize'
                 window.addEventListener('resize', verificarTamanhoDaTela);
-        
+
                 // Chamar a função assim que a página carregar
                 verificarTamanhoDaTela();
             });
         </script>
     </nav>
-    
+
     <main>
         <h2 class="title">Sobre Nós</h2>
-        <div class="about-us" id="#about-us">
+        <section class="about-us" id="#about-us">
             <div class="information">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed distinctio itaque similique odit
                     asperiores laborum quisquam fuga quidem reprehenderit optio mollitia alias quibusdam, omnis ratione
@@ -138,10 +138,10 @@
             </div>
 
             <img src="public/img/wallpaper-symbol.png" alt="">
-        </div>
+        </section>
 
         <hr>
-        <div class="aedrim" id="aedrim">
+        <section class="aedrim" id="aedrim">
 
             <!-- Carrossel -->
             <div class="title-principal">
@@ -188,19 +188,19 @@
                 </div>
             </div>
             <!-- Adicione mais slides conforme necessário -->
-        </div>
+        </section>
 
 
-        <div class="contact" id="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <h2 class="title">SE AVENTURE CONOSCO</h2>
-        
+
                 <div class="contact-form">
                     <form action="#" method="post">
                         <!-- Seus campos de formulário aqui -->
                     </form>
                 </div>
-        
+
                 <div class="contact-info">
                     <div class="contact-emails">
                         <div class="email-box">
@@ -214,7 +214,7 @@
                     </div>
 
                 </div>
-        
+
                 <!-- Adicione a seção Discord -->
                 <div class="discord">
                     <div class="invite">
@@ -230,20 +230,22 @@
                         <div class="texto-invite">
                             <h2 class="server-name">Revival Chronicles</h2>
                             <p class="canal-server">#porto-de-chegada</p>
-                            <p class="desc-server">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam quia perspiciatis, fuga eligendi maxime, tenetur quasi fugiat blanditiis porro culpa iusto, minima doloremque repellat! Neque ipsa esse officiis velit!</p>
+                            <p class="desc-server">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+                                quisquam quia perspiciatis, fuga eligendi maxime, tenetur quasi fugiat blanditiis porro
+                                culpa iusto, minima doloremque repellat! Neque ipsa esse officiis velit!</p>
                         </div>
                     </div>
                     <div class="center-line">
                         <img src="public/img/morgana.png" alt="Imagem Central">
                     </div>
                     <div class="widget-dicord">
-                        <iframe src="https://discord.com/widget?id=577205113966428161&theme=dark" width="350" height="500"
-                            allowtransparency="true" frameborder="0"
+                        <iframe src="https://discord.com/widget?id=577205113966428161&theme=dark" width="350"
+                            height="500" allowtransparency="true" frameborder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
 
     </main>
@@ -281,5 +283,97 @@
         });
     });
 </script>
+
+
+<script>
+
+    // Selecione a barra de navegação
+    const navBar = document.querySelector('.main-nav');
+
+    // Obtenha a posição inicial da barra de navegação
+    const navBarTop = navBar.offsetTop;
+
+    // Adicione um ouvinte de evento de rolagem
+    window.addEventListener('scroll', () => {
+        // Verifique se a posição de rolagem é maior ou igual à posição inicial da barra de navegação
+        if (window.scrollY >= navBarTop) {
+            // Adicione a classe 'fixed' se estiver rolando para baixo
+            navBar.classList.add('fixed');
+        } else {
+            // Remova a classe 'fixed' se estiver rolando para cima
+            navBar.classList.remove('fixed');
+        }
+    });
+
+    // Função para rolar suavemente até a seção alvo
+    function scrollToSection(targetId) {
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            const startPosition = window.scrollY;
+            const targetPosition = targetSection.offsetTop;
+            const distance = targetPosition - startPosition;
+            const duration = 800; // Tempo da animação em milissegundos
+            let start = null;
+
+            console.log(targetId, targetSection, startPosition, targetPosition, distance, duration); // Debugging
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                window.scrollTo(0, easeInOutQuad(progress, startPosition, distance, duration));
+                if (progress < duration) {
+                    requestAnimationFrame(step);
+                }
+            }
+
+            // Função de interpolação (easing) para obter uma animação mais suave
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            
+
+            requestAnimationFrame(step);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        function scrollSuaveAoTopo() {
+            const scrollStep = -window.scrollY / (500 / 15); // Ajuste os valores conforme necessário
+            const scrollInterval = setInterval(() => {
+                if (window.scrollY !== 0) {
+                    window.scrollBy(0, scrollStep);
+                } else {
+                    clearInterval(scrollInterval);
+                }
+            }, 15);
+        }
+
+        function adicionarEventoClique(link, callback) {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                callback();
+            });
+        }
+
+        // Adiciona evento de clique ao link com ID "link-about-us"
+        const aboutUsLink = document.getElementById('link-about-us');
+        adicionarEventoClique(aboutUsLink, scrollSuaveAoTopo);
+    });
+    // Adicione um ouvinte de evento de clique para cada link da navegação
+    document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1); // Remove o caractere '#' do href
+            scrollToSection(targetId);
+        });
+    });
+
+
+</script>
+
 
 </html>
