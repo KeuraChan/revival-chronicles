@@ -73,7 +73,7 @@ body {
     top: 0;
     width: 100%;
     background: #cc0000;
-    box-shadow: 0px 51px 39px -5px rgba(0,0,0,0.5);c
+    box-shadow: 0px 51px 39px -5px rgba(0,0,0,0.5);
 }
 
 
@@ -118,15 +118,7 @@ main {
     padding: 3px;
     background-color: #8B0000;
     width: 100%;
-    display: flex;
-    align-items: center;
 }
-
-/* .title-principal .separador {
-    margin-left: 10px;
-    border: 7px solid rgb(71, 45, 24);
-    flex-grow: 1;
-} */
 
 .title {
     margin: 0;
@@ -476,7 +468,32 @@ footer {
         margin-left: 0!important; 
         padding-left: 0!important;
     }
+    
+    .main-nav{
+        width: 100%;
+    }
 
+    #aedrim .slick-carousel {
+        width: 98%;
+        margin: 0;
+        
+    }
+    .title-principal{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .title-principal .title{
+        text-align: center;
+        width: 100%;
+
+    }
+    .contact-info {
+        justify-content: center;
+        margin: 0;
+    }
     .about-us .information {
         width: 90%;
         min-width: 0;
@@ -488,4 +505,9 @@ footer {
         min-width: 0; /* Remove a largura mínima */
         border-radius: 6px;
     }
+
+    .discord > div{
+        width: 80%!important;
+    }
+
 }
